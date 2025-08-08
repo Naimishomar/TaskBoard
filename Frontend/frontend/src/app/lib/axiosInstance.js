@@ -23,9 +23,9 @@ if (typeof window !== 'undefined') {
   const hostname = window.location.hostname;
 
   if (hostname === 'localhost') {
-    baseURL = 'http://localhost:3000/api';
+    baseURL = 'http://localhost:8000/api';
   } else {
-    baseURL = 'https://task-board-backend-seven.vercel.app/api';
+    baseURL = 'https://taskboard-backend-jejb.onrender.com/api';
   }
 }
 
