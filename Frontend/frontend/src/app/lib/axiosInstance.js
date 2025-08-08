@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://task-board-backend-seven.vercel.app/api',
+  baseURL: 'https://task-board-backend-seven.vercel.app/api' || 'http://localhost:3000/api',
+  withCredentials: true,
 });
 
 instance.interceptors.request.use((config) => {
