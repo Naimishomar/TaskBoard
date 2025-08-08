@@ -26,16 +26,11 @@ app.use(cors({
   },
   credentials: true,
 }));
-app.options('*', cors());
 app.use(express.json());
 
 app.use('/api/user', authRoutes);
 app.use('/api/boards', boardRoutes);
 app.use('/api/tasks', taskRoutes);
-
-app.get('/cors-test', (req, res) => {
-  res.json({ message: 'CORS working!' });
-});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

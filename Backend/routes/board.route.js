@@ -6,5 +6,6 @@ const router = express.Router();
 router.route('/get-boards').get(authMiddleware, getBoards);
 router.route('/create-board').post(authMiddleware, createBoard);
 router.route('/delete/:id').delete(authMiddleware, deleteBoard);
+console.log("Loaded [task/board/user] routes");
 
 export default router;

@@ -6,5 +6,5 @@ const router = express.Router();
 router.route('/register').post(register);
 router.route('/login').post(login);
 router.route('/get-profile').get(authMiddleware, getProfile);
-
+console.log("Loaded [task/board/user] routes");
 export default router;

@@ -7,5 +7,6 @@ router.route('/:boardId').get(authMiddleware, getTasks);
 router.route('/:boardId').post(authMiddleware, createTask);
 router.route('/:taskId').put(authMiddleware, updateTask);
 router.route('/:taskId').delete(authMiddleware, deleteTask);
+console.log("Loaded [task/board/user] routes");
 
 export default router;
