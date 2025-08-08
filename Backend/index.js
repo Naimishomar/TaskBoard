@@ -9,10 +9,24 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 
 const app = express();
+
+const allowedOrigins = [
+  'http://localhost:3000',
+  process.env.FRONTEND_URL,
+];
+
 app.use(cors({
-    origin: ['http://localhost:3000', process.env.FRONTEND_URL],
-    credentials: true
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.log(`🚫 Blocked by CORS: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
 }));
+
 app.use(express.json());
 
 app.use('/api/user', authRoutes);
